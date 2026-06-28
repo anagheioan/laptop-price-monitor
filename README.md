@@ -12,6 +12,32 @@ Automated daily price tracking for 3 AMD laptops available in Romania, powered b
 
 All three laptops have an **AMD Ryzen AI 7** CPU and **32 GB RAM**, selected as the best-value options under 7,000 RON available in Romania as of June 2026.
 
+## Price Evolution
+
+*Updated daily by the cloud routine. Data points with `UNAVAILABLE` status are omitted.*
+
+<!-- PRICE_CHART_START -->
+### Lenovo IdeaPad Slim 5 16AKP10 (Altex)
+```mermaid
+xychart-beta
+    x-axis ["Jun 27", "Jun 28"]
+    y-axis "lei" 4600 --> 4800
+    line [4699.90, 4699.90]
+```
+
+### ASUS Vivobook S16 M3607GA (eMAG)
+```mermaid
+xychart-beta
+    x-axis ["Jun 27", "Jun 28"]
+    y-axis "lei" 5800 --> 6000
+    line [5899.00, 5899.00]
+```
+
+### Lenovo Yoga Slim 7 14AGP11 (eMAG)
+_No price data available yet._
+
+<!-- PRICE_CHART_END -->
+
 ## How It Works
 
 A Claude Code cloud routine runs **every day at 9am Romania time** and:
@@ -19,7 +45,8 @@ A Claude Code cloud routine runs **every day at 9am Romania time** and:
 1. Checks current prices using WebFetch (Altex) and Romanian price aggregators (eMAG products)
 2. Compares against baseline prices established on 2026-06-27
 3. Appends one row per laptop to `price_history.csv`
-4. Commits and pushes the updated CSV to this repo
+4. Regenerates the Price Evolution charts in this README
+5. Commits and pushes both files to this repo
 
 ## Price Sources
 
